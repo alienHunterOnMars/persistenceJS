@@ -369,7 +369,7 @@ export interface PTokenInterface extends PTokenReadOnlyInterface {
     },
     fee?: number | StdFee | "auto",
     memo?: string,
-    funds?: readonly Coin[],
+    funds?: readonly Coin[]
   ) => Promise<ExecuteResult>;
   burn: (
     {
@@ -381,7 +381,7 @@ export interface PTokenInterface extends PTokenReadOnlyInterface {
     },
     fee?: number | StdFee | "auto",
     memo?: string,
-    funds?: readonly Coin[],
+    funds?: readonly Coin[]
   ) => Promise<ExecuteResult>;
   send: (
     {
@@ -395,7 +395,7 @@ export interface PTokenInterface extends PTokenReadOnlyInterface {
     },
     fee?: number | StdFee | "auto",
     memo?: string,
-    funds?: readonly Coin[],
+    funds?: readonly Coin[]
   ) => Promise<ExecuteResult>;
   increaseAllowance: (
     {
@@ -409,7 +409,7 @@ export interface PTokenInterface extends PTokenReadOnlyInterface {
     },
     fee?: number | StdFee | "auto",
     memo?: string,
-    funds?: readonly Coin[],
+    funds?: readonly Coin[]
   ) => Promise<ExecuteResult>;
   decreaseAllowance: (
     {
@@ -423,7 +423,7 @@ export interface PTokenInterface extends PTokenReadOnlyInterface {
     },
     fee?: number | StdFee | "auto",
     memo?: string,
-    funds?: readonly Coin[],
+    funds?: readonly Coin[]
   ) => Promise<ExecuteResult>;
   transferFrom: (
     {
@@ -437,7 +437,7 @@ export interface PTokenInterface extends PTokenReadOnlyInterface {
     },
     fee?: number | StdFee | "auto",
     memo?: string,
-    funds?: readonly Coin[],
+    funds?: readonly Coin[]
   ) => Promise<ExecuteResult>;
   sendFrom: (
     {
@@ -453,7 +453,7 @@ export interface PTokenInterface extends PTokenReadOnlyInterface {
     },
     fee?: number | StdFee | "auto",
     memo?: string,
-    funds?: readonly Coin[],
+    funds?: readonly Coin[]
   ) => Promise<ExecuteResult>;
   burnFrom: (
     {
@@ -465,7 +465,7 @@ export interface PTokenInterface extends PTokenReadOnlyInterface {
     },
     fee?: number | StdFee | "auto",
     memo?: string,
-    funds?: readonly Coin[],
+    funds?: readonly Coin[]
   ) => Promise<ExecuteResult>;
   mint: (
     {
@@ -477,7 +477,7 @@ export interface PTokenInterface extends PTokenReadOnlyInterface {
     },
     fee?: number | StdFee | "auto",
     memo?: string,
-    funds?: readonly Coin[],
+    funds?: readonly Coin[]
   ) => Promise<ExecuteResult>;
   updateMarketing: (
     {
@@ -491,12 +491,12 @@ export interface PTokenInterface extends PTokenReadOnlyInterface {
     },
     fee?: number | StdFee | "auto",
     memo?: string,
-    funds?: readonly Coin[],
+    funds?: readonly Coin[]
   ) => Promise<ExecuteResult>;
   uploadLogo: (
     fee?: number | StdFee | "auto",
     memo?: string,
-    funds?: readonly Coin[],
+    funds?: readonly Coin[]
   ) => Promise<ExecuteResult>;
 }
 export class PTokenClient extends PTokenQueryClient implements PTokenInterface {
@@ -532,7 +532,7 @@ export class PTokenClient extends PTokenQueryClient implements PTokenInterface {
     },
     fee: number | StdFee | "auto" = "auto",
     memo?: string,
-    funds?: readonly Coin[],
+    funds?: readonly Coin[]
   ): Promise<ExecuteResult> => {
     return await this.client.execute(
       this.sender,
@@ -545,7 +545,7 @@ export class PTokenClient extends PTokenQueryClient implements PTokenInterface {
       },
       fee,
       memo,
-      funds,
+      funds
     );
   };
   burn = async (
@@ -558,7 +558,7 @@ export class PTokenClient extends PTokenQueryClient implements PTokenInterface {
     },
     fee: number | StdFee | "auto" = "auto",
     memo?: string,
-    funds?: readonly Coin[],
+    funds?: readonly Coin[]
   ): Promise<ExecuteResult> => {
     return await this.client.execute(
       this.sender,
@@ -571,7 +571,7 @@ export class PTokenClient extends PTokenQueryClient implements PTokenInterface {
       },
       fee,
       memo,
-      funds,
+      funds
     );
   };
   send = async (
@@ -586,7 +586,7 @@ export class PTokenClient extends PTokenQueryClient implements PTokenInterface {
     },
     fee: number | StdFee | "auto" = "auto",
     memo?: string,
-    funds?: readonly Coin[],
+    funds?: readonly Coin[]
   ): Promise<ExecuteResult> => {
     return await this.client.execute(
       this.sender,
@@ -600,7 +600,7 @@ export class PTokenClient extends PTokenQueryClient implements PTokenInterface {
       },
       fee,
       memo,
-      funds,
+      funds
     );
   };
   increaseAllowance = async (
@@ -615,7 +615,7 @@ export class PTokenClient extends PTokenQueryClient implements PTokenInterface {
     },
     fee: number | StdFee | "auto" = "auto",
     memo?: string,
-    funds?: readonly Coin[],
+    funds?: readonly Coin[]
   ): Promise<ExecuteResult> => {
     return await this.client.execute(
       this.sender,
@@ -629,7 +629,7 @@ export class PTokenClient extends PTokenQueryClient implements PTokenInterface {
       },
       fee,
       memo,
-      funds,
+      funds
     );
   };
   decreaseAllowance = async (
@@ -644,7 +644,7 @@ export class PTokenClient extends PTokenQueryClient implements PTokenInterface {
     },
     fee: number | StdFee | "auto" = "auto",
     memo?: string,
-    funds?: readonly Coin[],
+    funds?: readonly Coin[]
   ): Promise<ExecuteResult> => {
     return await this.client.execute(
       this.sender,
@@ -658,7 +658,7 @@ export class PTokenClient extends PTokenQueryClient implements PTokenInterface {
       },
       fee,
       memo,
-      funds,
+      funds
     );
   };
   transferFrom = async (
@@ -673,7 +673,7 @@ export class PTokenClient extends PTokenQueryClient implements PTokenInterface {
     },
     fee: number | StdFee | "auto" = "auto",
     memo?: string,
-    funds?: readonly Coin[],
+    funds?: readonly Coin[]
   ): Promise<ExecuteResult> => {
     return await this.client.execute(
       this.sender,
@@ -687,7 +687,7 @@ export class PTokenClient extends PTokenQueryClient implements PTokenInterface {
       },
       fee,
       memo,
-      funds,
+      funds
     );
   };
   sendFrom = async (
@@ -704,7 +704,7 @@ export class PTokenClient extends PTokenQueryClient implements PTokenInterface {
     },
     fee: number | StdFee | "auto" = "auto",
     memo?: string,
-    funds?: readonly Coin[],
+    funds?: readonly Coin[]
   ): Promise<ExecuteResult> => {
     return await this.client.execute(
       this.sender,
@@ -719,7 +719,7 @@ export class PTokenClient extends PTokenQueryClient implements PTokenInterface {
       },
       fee,
       memo,
-      funds,
+      funds
     );
   };
   burnFrom = async (
@@ -732,7 +732,7 @@ export class PTokenClient extends PTokenQueryClient implements PTokenInterface {
     },
     fee: number | StdFee | "auto" = "auto",
     memo?: string,
-    funds?: readonly Coin[],
+    funds?: readonly Coin[]
   ): Promise<ExecuteResult> => {
     return await this.client.execute(
       this.sender,
@@ -745,7 +745,7 @@ export class PTokenClient extends PTokenQueryClient implements PTokenInterface {
       },
       fee,
       memo,
-      funds,
+      funds
     );
   };
   mint = async (
@@ -758,7 +758,7 @@ export class PTokenClient extends PTokenQueryClient implements PTokenInterface {
     },
     fee: number | StdFee | "auto" = "auto",
     memo?: string,
-    funds?: readonly Coin[],
+    funds?: readonly Coin[]
   ): Promise<ExecuteResult> => {
     return await this.client.execute(
       this.sender,
@@ -771,7 +771,7 @@ export class PTokenClient extends PTokenQueryClient implements PTokenInterface {
       },
       fee,
       memo,
-      funds,
+      funds
     );
   };
   updateMarketing = async (
@@ -786,7 +786,7 @@ export class PTokenClient extends PTokenQueryClient implements PTokenInterface {
     },
     fee: number | StdFee | "auto" = "auto",
     memo?: string,
-    funds?: readonly Coin[],
+    funds?: readonly Coin[]
   ): Promise<ExecuteResult> => {
     return await this.client.execute(
       this.sender,
@@ -800,13 +800,13 @@ export class PTokenClient extends PTokenQueryClient implements PTokenInterface {
       },
       fee,
       memo,
-      funds,
+      funds
     );
   };
   uploadLogo = async (
     fee: number | StdFee | "auto" = "auto",
     memo?: string,
-    funds?: readonly Coin[],
+    funds?: readonly Coin[]
   ): Promise<ExecuteResult> => {
     return await this.client.execute(
       this.sender,
@@ -816,7 +816,7 @@ export class PTokenClient extends PTokenQueryClient implements PTokenInterface {
       },
       fee,
       memo,
-      funds,
+      funds
     );
   };
 }

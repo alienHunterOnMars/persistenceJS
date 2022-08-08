@@ -318,7 +318,7 @@ export interface BlMarketInterface extends BlMarketReadOnlyInterface {
     },
     fee?: number | StdFee | "auto",
     memo?: string,
-    funds?: readonly Coin[],
+    funds?: readonly Coin[]
   ) => Promise<ExecuteResult>;
   updateConfig: (
     {
@@ -328,7 +328,7 @@ export interface BlMarketInterface extends BlMarketReadOnlyInterface {
     },
     fee?: number | StdFee | "auto",
     memo?: string,
-    funds?: readonly Coin[],
+    funds?: readonly Coin[]
   ) => Promise<ExecuteResult>;
   initAsset: (
     {
@@ -342,7 +342,7 @@ export interface BlMarketInterface extends BlMarketReadOnlyInterface {
     },
     fee?: number | StdFee | "auto",
     memo?: string,
-    funds?: readonly Coin[],
+    funds?: readonly Coin[]
   ) => Promise<ExecuteResult>;
   initAssetTokenCallback: (
     {
@@ -352,7 +352,7 @@ export interface BlMarketInterface extends BlMarketReadOnlyInterface {
     },
     fee?: number | StdFee | "auto",
     memo?: string,
-    funds?: readonly Coin[],
+    funds?: readonly Coin[]
   ) => Promise<ExecuteResult>;
   updateAsset: (
     {
@@ -364,7 +364,7 @@ export interface BlMarketInterface extends BlMarketReadOnlyInterface {
     },
     fee?: number | StdFee | "auto",
     memo?: string,
-    funds?: readonly Coin[],
+    funds?: readonly Coin[]
   ) => Promise<ExecuteResult>;
   depositNative: (
     {
@@ -376,7 +376,7 @@ export interface BlMarketInterface extends BlMarketReadOnlyInterface {
     },
     fee?: number | StdFee | "auto",
     memo?: string,
-    funds?: readonly Coin[],
+    funds?: readonly Coin[]
   ) => Promise<ExecuteResult>;
   withdraw: (
     {
@@ -388,7 +388,7 @@ export interface BlMarketInterface extends BlMarketReadOnlyInterface {
     },
     fee?: number | StdFee | "auto",
     memo?: string,
-    funds?: readonly Coin[],
+    funds?: readonly Coin[]
   ) => Promise<ExecuteResult>;
   borrow: (
     {
@@ -402,7 +402,7 @@ export interface BlMarketInterface extends BlMarketReadOnlyInterface {
     },
     fee?: number | StdFee | "auto",
     memo?: string,
-    funds?: readonly Coin[],
+    funds?: readonly Coin[]
   ) => Promise<ExecuteResult>;
   repayNative: (
     {
@@ -414,7 +414,7 @@ export interface BlMarketInterface extends BlMarketReadOnlyInterface {
     },
     fee?: number | StdFee | "auto",
     memo?: string,
-    funds?: readonly Coin[],
+    funds?: readonly Coin[]
   ) => Promise<ExecuteResult>;
 }
 export class BlMarketClient extends BlMarketQueryClient implements BlMarketInterface {
@@ -450,7 +450,7 @@ export class BlMarketClient extends BlMarketQueryClient implements BlMarketInter
     },
     fee: number | StdFee | "auto" = "auto",
     memo?: string,
-    funds?: readonly Coin[],
+    funds?: readonly Coin[]
   ): Promise<ExecuteResult> => {
     return await this.client.execute(
       this.sender,
@@ -464,7 +464,7 @@ export class BlMarketClient extends BlMarketQueryClient implements BlMarketInter
       },
       fee,
       memo,
-      funds,
+      funds
     );
   };
   updateConfig = async (
@@ -475,7 +475,7 @@ export class BlMarketClient extends BlMarketQueryClient implements BlMarketInter
     },
     fee: number | StdFee | "auto" = "auto",
     memo?: string,
-    funds?: readonly Coin[],
+    funds?: readonly Coin[]
   ): Promise<ExecuteResult> => {
     return await this.client.execute(
       this.sender,
@@ -487,7 +487,7 @@ export class BlMarketClient extends BlMarketQueryClient implements BlMarketInter
       },
       fee,
       memo,
-      funds,
+      funds
     );
   };
   initAsset = async (
@@ -502,7 +502,7 @@ export class BlMarketClient extends BlMarketQueryClient implements BlMarketInter
     },
     fee: number | StdFee | "auto" = "auto",
     memo?: string,
-    funds?: readonly Coin[],
+    funds?: readonly Coin[]
   ): Promise<ExecuteResult> => {
     return await this.client.execute(
       this.sender,
@@ -516,7 +516,7 @@ export class BlMarketClient extends BlMarketQueryClient implements BlMarketInter
       },
       fee,
       memo,
-      funds,
+      funds
     );
   };
   initAssetTokenCallback = async (
@@ -527,7 +527,7 @@ export class BlMarketClient extends BlMarketQueryClient implements BlMarketInter
     },
     fee: number | StdFee | "auto" = "auto",
     memo?: string,
-    funds?: readonly Coin[],
+    funds?: readonly Coin[]
   ): Promise<ExecuteResult> => {
     return await this.client.execute(
       this.sender,
@@ -539,7 +539,7 @@ export class BlMarketClient extends BlMarketQueryClient implements BlMarketInter
       },
       fee,
       memo,
-      funds,
+      funds
     );
   };
   updateAsset = async (
@@ -552,7 +552,7 @@ export class BlMarketClient extends BlMarketQueryClient implements BlMarketInter
     },
     fee: number | StdFee | "auto" = "auto",
     memo?: string,
-    funds?: readonly Coin[],
+    funds?: readonly Coin[]
   ): Promise<ExecuteResult> => {
     return await this.client.execute(
       this.sender,
@@ -565,7 +565,7 @@ export class BlMarketClient extends BlMarketQueryClient implements BlMarketInter
       },
       fee,
       memo,
-      funds,
+      funds
     );
   };
   depositNative = async (
@@ -578,7 +578,7 @@ export class BlMarketClient extends BlMarketQueryClient implements BlMarketInter
     },
     fee: number | StdFee | "auto" = "auto",
     memo?: string,
-    funds?: readonly Coin[],
+    funds?: readonly Coin[]
   ): Promise<ExecuteResult> => {
     return await this.client.execute(
       this.sender,
@@ -591,7 +591,7 @@ export class BlMarketClient extends BlMarketQueryClient implements BlMarketInter
       },
       fee,
       memo,
-      funds,
+      funds
     );
   };
   withdraw = async (
@@ -604,7 +604,7 @@ export class BlMarketClient extends BlMarketQueryClient implements BlMarketInter
     },
     fee: number | StdFee | "auto" = "auto",
     memo?: string,
-    funds?: readonly Coin[],
+    funds?: readonly Coin[]
   ): Promise<ExecuteResult> => {
     return await this.client.execute(
       this.sender,
@@ -617,7 +617,7 @@ export class BlMarketClient extends BlMarketQueryClient implements BlMarketInter
       },
       fee,
       memo,
-      funds,
+      funds
     );
   };
   borrow = async (
@@ -632,7 +632,7 @@ export class BlMarketClient extends BlMarketQueryClient implements BlMarketInter
     },
     fee: number | StdFee | "auto" = "auto",
     memo?: string,
-    funds?: readonly Coin[],
+    funds?: readonly Coin[]
   ): Promise<ExecuteResult> => {
     return await this.client.execute(
       this.sender,
@@ -646,7 +646,7 @@ export class BlMarketClient extends BlMarketQueryClient implements BlMarketInter
       },
       fee,
       memo,
-      funds,
+      funds
     );
   };
   repayNative = async (
@@ -659,7 +659,7 @@ export class BlMarketClient extends BlMarketQueryClient implements BlMarketInter
     },
     fee: number | StdFee | "auto" = "auto",
     memo?: string,
-    funds?: readonly Coin[],
+    funds?: readonly Coin[]
   ): Promise<ExecuteResult> => {
     return await this.client.execute(
       this.sender,
@@ -672,7 +672,7 @@ export class BlMarketClient extends BlMarketQueryClient implements BlMarketInter
       },
       fee,
       memo,
-      funds,
+      funds
     );
   };
 }

@@ -151,7 +151,7 @@ export interface OracleInterface extends OracleReadOnlyInterface {
     },
     fee?: number | StdFee | "auto",
     memo?: string,
-    funds?: readonly Coin[],
+    funds?: readonly Coin[]
   ) => Promise<ExecuteResult>;
   registerFeeder: (
     {
@@ -163,7 +163,7 @@ export interface OracleInterface extends OracleReadOnlyInterface {
     },
     fee?: number | StdFee | "auto",
     memo?: string,
-    funds?: readonly Coin[],
+    funds?: readonly Coin[]
   ) => Promise<ExecuteResult>;
   feedPrice: (
     {
@@ -175,7 +175,7 @@ export interface OracleInterface extends OracleReadOnlyInterface {
     },
     fee?: number | StdFee | "auto",
     memo?: string,
-    funds?: readonly Coin[],
+    funds?: readonly Coin[]
   ) => Promise<ExecuteResult>;
 }
 export class OracleClient extends OracleQueryClient implements OracleInterface {
@@ -201,7 +201,7 @@ export class OracleClient extends OracleQueryClient implements OracleInterface {
     },
     fee: number | StdFee | "auto" = "auto",
     memo?: string,
-    funds?: readonly Coin[],
+    funds?: readonly Coin[]
   ): Promise<ExecuteResult> => {
     return await this.client.execute(
       this.sender,
@@ -213,7 +213,7 @@ export class OracleClient extends OracleQueryClient implements OracleInterface {
       },
       fee,
       memo,
-      funds,
+      funds
     );
   };
   registerFeeder = async (
@@ -226,7 +226,7 @@ export class OracleClient extends OracleQueryClient implements OracleInterface {
     },
     fee: number | StdFee | "auto" = "auto",
     memo?: string,
-    funds?: readonly Coin[],
+    funds?: readonly Coin[]
   ): Promise<ExecuteResult> => {
     return await this.client.execute(
       this.sender,
@@ -239,7 +239,7 @@ export class OracleClient extends OracleQueryClient implements OracleInterface {
       },
       fee,
       memo,
-      funds,
+      funds
     );
   };
   feedPrice = async (
@@ -252,7 +252,7 @@ export class OracleClient extends OracleQueryClient implements OracleInterface {
     },
     fee: number | StdFee | "auto" = "auto",
     memo?: string,
-    funds?: readonly Coin[],
+    funds?: readonly Coin[]
   ): Promise<ExecuteResult> => {
     return await this.client.execute(
       this.sender,
@@ -265,7 +265,7 @@ export class OracleClient extends OracleQueryClient implements OracleInterface {
       },
       fee,
       memo,
-      funds,
+      funds
     );
   };
 }

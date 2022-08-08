@@ -442,7 +442,7 @@ export interface Cw20Ics20Interface extends Cw20Ics20ReadOnlyInterface {
     },
     fee?: number | StdFee | "auto",
     memo?: string,
-    funds?: readonly Coin[],
+    funds?: readonly Coin[]
   ) => Promise<ExecuteResult>;
   transfer: (
     {
@@ -456,7 +456,7 @@ export interface Cw20Ics20Interface extends Cw20Ics20ReadOnlyInterface {
     },
     fee?: number | StdFee | "auto",
     memo?: string,
-    funds?: readonly Coin[],
+    funds?: readonly Coin[]
   ) => Promise<ExecuteResult>;
   allow: (
     {
@@ -468,7 +468,7 @@ export interface Cw20Ics20Interface extends Cw20Ics20ReadOnlyInterface {
     },
     fee?: number | StdFee | "auto",
     memo?: string,
-    funds?: readonly Coin[],
+    funds?: readonly Coin[]
   ) => Promise<ExecuteResult>;
   updateAdmin: (
     {
@@ -478,7 +478,7 @@ export interface Cw20Ics20Interface extends Cw20Ics20ReadOnlyInterface {
     },
     fee?: number | StdFee | "auto",
     memo?: string,
-    funds?: readonly Coin[],
+    funds?: readonly Coin[]
   ) => Promise<ExecuteResult>;
 }
 export class Cw20Ics20Client extends Cw20Ics20QueryClient implements Cw20Ics20Interface {
@@ -509,7 +509,7 @@ export class Cw20Ics20Client extends Cw20Ics20QueryClient implements Cw20Ics20In
     },
     fee: number | StdFee | "auto" = "auto",
     memo?: string,
-    funds?: readonly Coin[],
+    funds?: readonly Coin[]
   ): Promise<ExecuteResult> => {
     return await this.client.execute(
       this.sender,
@@ -523,7 +523,7 @@ export class Cw20Ics20Client extends Cw20Ics20QueryClient implements Cw20Ics20In
       },
       fee,
       memo,
-      funds,
+      funds
     );
   };
   transfer = async (
@@ -538,7 +538,7 @@ export class Cw20Ics20Client extends Cw20Ics20QueryClient implements Cw20Ics20In
     },
     fee: number | StdFee | "auto" = "auto",
     memo?: string,
-    funds?: readonly Coin[],
+    funds?: readonly Coin[]
   ): Promise<ExecuteResult> => {
     return await this.client.execute(
       this.sender,
@@ -552,7 +552,7 @@ export class Cw20Ics20Client extends Cw20Ics20QueryClient implements Cw20Ics20In
       },
       fee,
       memo,
-      funds,
+      funds
     );
   };
   allow = async (
@@ -565,7 +565,7 @@ export class Cw20Ics20Client extends Cw20Ics20QueryClient implements Cw20Ics20In
     },
     fee: number | StdFee | "auto" = "auto",
     memo?: string,
-    funds?: readonly Coin[],
+    funds?: readonly Coin[]
   ): Promise<ExecuteResult> => {
     return await this.client.execute(
       this.sender,
@@ -578,7 +578,7 @@ export class Cw20Ics20Client extends Cw20Ics20QueryClient implements Cw20Ics20In
       },
       fee,
       memo,
-      funds,
+      funds
     );
   };
   updateAdmin = async (
@@ -589,7 +589,7 @@ export class Cw20Ics20Client extends Cw20Ics20QueryClient implements Cw20Ics20In
     },
     fee: number | StdFee | "auto" = "auto",
     memo?: string,
-    funds?: readonly Coin[],
+    funds?: readonly Coin[]
   ): Promise<ExecuteResult> => {
     return await this.client.execute(
       this.sender,
@@ -601,7 +601,7 @@ export class Cw20Ics20Client extends Cw20Ics20QueryClient implements Cw20Ics20In
       },
       fee,
       memo,
-      funds,
+      funds
     );
   };
 }

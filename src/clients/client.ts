@@ -32,7 +32,7 @@ export class PersistenceClient {
     wasm: SigningCosmWasmClient,
     core: SigningStargateClient,
     queryclient,
-    config?: Config,
+    config?: Config
   ) {
     this.mnemonic = mnemonic;
     this.config = config;
@@ -57,4 +57,3 @@ export class PersistenceClient {
     return new PersistenceClient(mnemonic, wallet, wasm, core, query);
   }
 }
-

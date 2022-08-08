@@ -1,6 +1,6 @@
 {
   "printWidth": 110,
-  "trailingComma": "all",
+  "trailingComma": "es5",
   "overrides": [
     {
       "files": "*.md",
