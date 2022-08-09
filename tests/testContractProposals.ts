@@ -20,9 +20,14 @@ export async function ContractTest() {
     const test1 = await PersistenceClient.init(
         "obtain door word season wealth inspire tobacco shallow thumb tip walk forum someone verb pistol bright mutual nest fog valley tiny section sauce typical"
     )//persistence1ht0tun4u5uj4f4z83p9tncjerwu27ycsm52txm
+    const [test1Account] = await test1.wallet.getAccounts()
+    const test1Address = test1Account.address
+
     const test2 = await PersistenceClient.init(
         "hungry foil sort arrest lizard sing acquire traffic veteran entire empty humble coach melody avoid gospel pair above chuckle hip list cage vessel zebra"
-    )//persistence123em6jp7y96rtylp6tjk9r0dcescl0k4ccqvpu 
+    )//persistence123em6jp7y96rtylp6tjk9r0dcescl0k4ccqvpu
+    const [test2Account] = await test2.wallet.getAccounts()
+    const test2Address = test2Account.address 
 
     const test3 = await PersistenceClient.init(
         "trip deliver device army resource toe stem unhappy employ vendor talent vapor little pole pottery side domain wealth bleak top diary card rose agree"
@@ -33,13 +38,13 @@ export async function ContractTest() {
 
     try {
         console.log("Submitting Proposal ...")
-        const wasm = fs.readFileSync("source/cw-plus/artifacts/cw20_ics20.wasm"); // path should be relative to install directory of persistenceJs
+        const wasm = fs.readFileSync("source/cw-plus/artifacts/cw20_base.wasm"); // path should be relative to install directory of persistenceJs
         //wasm proposl of type StoreCodeProposal
         const wasmStoreProposal = {
             typeUrl: "/cosmwasm.wasm.v1.StoreCodeProposal",
             value: Uint8Array.from(cosmwasm.wasm.v1.StoreCodeProposal.encode(cosmwasm.wasm.v1.StoreCodeProposal.fromPartial({
-                title: "ICS20 Contract",
-                description: "Add wasm code for ICS20 contract.",
+                title: "CW20 Contract",
+                description: "Add wasm code for CW20 contract.",
                 runAs: test3Address,
                 wasmByteCode: Pako.gzip(wasm, { level: 9 }),
                 instantiatePermission: {
@@ -87,30 +92,45 @@ export async function ContractTest() {
     // init code proposals ics20
     try {
         console.log("Submitting Proposal ...")
+        // const initMsg = {
+        //     allowlist: [
+        //         // {
+        //         //     contract: "persistence1234234",
+        //         //     gas_limit: 10000,
+        //         // },
+        //     ],
+        //     default_gas_limit: 1000000,
+        //     default_timeout: 10000,
+        //     gov_contract: val1Address
+        // }
+
         const initMsg = {
-            allowlist: [
-                // {
-                //     contract: "persistence1234234",
-                //     gas_limit: 10000,
-                // },
+            name: "pstake",
+            symbol: "PSTAKE",
+            decimals: 2,
+            // list of all validator self-delegate addresses - 100 STARs each!
+            initial_balances: [
+                { address: test3Address, amount: "10000" },
+                { address: test1Address, amount: "10000" },
+                { address: test2Address, amount: "10000" },
             ],
-            default_gas_limit: 1000000,
-            default_timeout: 10000,
-            gov_contract: val1Address
-        }
+            mint: {
+                minter: test3Address,
+            },
+        };
         //wasm proposl of type InstantiateContractProposal
         const initContractProposal = {
             typeUrl: "/cosmwasm.wasm.v1.InstantiateContractProposal",
             value: Uint8Array.from(cosmwasm.wasm.v1.InstantiateContractProposal.encode(cosmwasm.wasm.v1.InstantiateContractProposal.fromJSON(
                 {
-                    title: "ICS20",
-                    description: "CW20 ICS20 contract, used for ibc transfer.",
+                    title: "CW20",
+                    description: "CW20 contract",
                     runAs: test3Address,
                     admin: test3Address,
                     codeId: codeId.toString(),
-                    label: "native ics20",
+                    label: "cw20",
                     msg: Buffer.from(JSON.stringify(initMsg)).toString("base64"),
-                    funds: coins(1000000000, "stake")
+                    funds: coins(10000000000, "stake")
                 }
             )).finish())
         }
