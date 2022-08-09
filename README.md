@@ -14,11 +14,11 @@
     ·
     <a href="https://cosmos.github.io/cosmjs/latest/stargate/index.html">Docs</a>
 </p>
+
 ## Setup
 ```sh
 npm install persistenceonejs
 ```
-
 ## Usage
 ```js
 import {PersistenceClient} from 'persistenceonejs';
